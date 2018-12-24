@@ -1,0 +1,60 @@
+PATH
+  remote: .
+  specs:
+    westwood-skill (0.0.1)
+      bugsnag
+      bundler
+      chronic
+      chronic_duration
+      ralyxa
+      sinatra
+
+PATH
+  remote: /Users/peter.drake/workspace/ralyxa
+  specs:
+    ralyxa (1.8.0)
+      alexa_verifier (~> 1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    alexa_verifier (1.0.0)
+    bugsnag (6.10.0)
+      concurrent-ruby (~> 1.0)
+    chronic (0.10.2)
+    chronic_duration (0.10.6)
+      numerizer (~> 0.1.1)
+    concurrent-ruby (1.1.4)
+    ffi (1.9.25)
+    listen (3.1.5)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
+      ruby_dep (~> 1.2)
+    mustermann (1.0.3)
+    numerizer (0.1.1)
+    rack (2.0.6)
+    rack-protection (2.0.5)
+      rack
+    rb-fsevent (0.10.3)
+    rb-inotify (0.10.0)
+      ffi (~> 1.0)
+    rerun (0.13.0)
+      listen (~> 3.0)
+    ruby_dep (1.5.0)
+    sinatra (2.0.5)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.5)
+      tilt (~> 2.0)
+    tilt (2.0.9)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  ralyxa!
+  rerun
+  westwood-skill!
+
+BUNDLED WITH
+   1.17.2
