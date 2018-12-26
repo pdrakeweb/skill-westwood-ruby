@@ -85,6 +85,96 @@
                         "Stop playing the sermon",
                         "Stop the sermon"
                     ]
+                },
+                {
+                    "name": "AboutWestwood",
+                    "slots": [],
+                    "samples": [
+                        "Learn about Westwood",
+                        "Who is Westwood",
+                        "What is Westwood",
+                        "Describe Westwood",
+                        "Describe the church",
+                        "About the church",
+                        "Tell me about the church",
+                        "Learn about the church",
+                        "Tell me about Westwood"
+                    ]
+                },
+                {
+                    "name": "MoreAboutWestwood",
+                    "slots": [],
+                    "samples": [
+                        "Learn more about Westwood",
+                        "I want to learn more about Westwood",
+                        "I want to learn more",
+                        "Learn more",
+                        "Tell me more",
+                        "Tell me more about Westwood"
+                    ]
+                },
+                {
+                    "name": "AboutFellowship",
+                    "slots": [],
+                    "samples": [
+                        "Fellowship",
+                        "More about fellowship",
+                        "I want to learn more about fellowship",
+                        "Learn more about fellowship",
+                        "Tell me more about fellowship",
+                        "I want to learn about fellowship",
+                        "Learn about fellowship",
+                        "Tell me about fellowship"
+                    ]
+                },
+                {
+                    "name": "AboutWorship",
+                    "slots": [],
+                    "samples": [
+                        "Services",
+                        "Worship service",
+                        "About the worship service",
+                        "Tell me about the worship service",
+                        "I want to learn more about worship",
+                        "Tell me more about worship",
+                        "Learn more about worship",
+                        "I want to learn about worship",
+                        "More about worship",
+                        "Tell me about worship",
+                        "Learn about worship"
+                    ]
+                },
+                {
+                    "name": "AboutLeadership",
+                    "slots": [],
+                    "samples": [
+                        "Who is the leadership",
+                        "Leadership",
+                        "Tell me about Westwood's leadership",
+                        "I want to learn more about the leadership",
+                        "More about the leadership",
+                        "I want to learn about the leadership",
+                        "Tell me more about the leadership",
+                        "Tell me about the leadership"
+                    ]
+                },
+                {
+                    "name": "AboutService",
+                    "slots": [],
+                    "samples": [
+                        "Serving",
+                        "How does Westwood serve the community",
+                        "How does Westwood serve",
+                        "How do I serve",
+                        "Where can I serve",
+                        "I want to serve",
+                        "I want to learn about serving",
+                        "I want to learn about service",
+                        "Tell me more about service",
+                        "Tell me more about serving",
+                        "Tell me about service",
+                        "Tell me about serving"
+                    ]
                 }
             ],
             "types": [
@@ -96,6 +186,8 @@
                             "name": {
                                 "value": "test",
                                 "synonyms": [
+                                    "the test sermon",
+                                    "a test sermon",
                                     "sample sermon",
                                     "example sermon",
                                     "test sermon",
@@ -114,6 +206,9 @@
                             "name": {
                                 "value": "recorded",
                                 "synonyms": [
+                                    "a previous sermon",
+                                    "a recorded sermon",
+                                    "a pre-recorded sermon",
                                     "recorded sermon",
                                     "pre-recorded sermon",
                                     "earlier sermon",
@@ -129,6 +224,7 @@
                             "name": {
                                 "value": "live",
                                 "synonyms": [
+                                    "a live sermon",
                                     "live sermon",
                                     "today's sermon",
                                     "today's",

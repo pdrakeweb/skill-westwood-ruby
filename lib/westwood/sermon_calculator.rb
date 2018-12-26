@@ -3,7 +3,17 @@ module Westwood
     def live_sermon?
       Date.today.sunday? && 
         Time.now >= sermon_start_time(Date.today) && 
-        Time.now <= sermin_end_time(Date.today)
+        Time.now <= sermon_end_time(Date.today)
+    end
+
+    def live_sermon_soon?
+      Date.today.sunday? &&
+        Time.now >= sermon_start_time(Date.today) - 3600 && 
+        Time.now <= sermon_end_time(Date.today)
+    end
+
+    def seconds_until_sermon
+      next_sunday_sermon_time.to_i
     end
 
     def next_live_sermon
