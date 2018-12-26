@@ -1,16 +1,17 @@
-require "net/http"
+require 'net/http'
+require 'timeout'
 
 module Westwood
   class SermonStreamer
     STREAM_URL = 'https://westwood.unit193.net:8001/westwood'
+    STREAM_URL_TEST = 'https://s3.amazonaws.com/ligonier-sermon-media/mp3/20171126_Sproul_A_Great_Salvation.mp3'
 
-    def is_live?
-      url = URI.parse(STREAM_URL)
+    def is_live?(type = :live)
+      url = URI.parse(stream_for(type))
       Timeout::timeout(8) do
-        http_success?(url)
+        return http_success?(url)
       end
-      false
-    rescue Timeout::Error
+    rescue ::Timeout::Error
       false
     end
 
@@ -19,13 +20,25 @@ module Westwood
         http.open_timeout = 3
         http.read_timeout = 3
         http.request_get(url.path) do |res|
+          return http_success?(URI.parse(res['location'])) if res.is_a?(Net::HTTPRedirection)
           return false unless res.is_a?(Net::HTTPSuccess)
           res.read_body { |chunk| return true }
         end
       end
+      true
+    rescue ::SocketError
       false
-    rescue SocketError
-      false
+    end
+
+    def stream_for(type = :live)
+      case type
+      when :live
+        STREAM_URL
+      when :test
+        STREAM_URL_TEST
+      else
+        raise 'Unknown stream'
+      end
     end
   end
 end

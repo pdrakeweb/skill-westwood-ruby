@@ -1,0 +1,193 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "westwood alliance",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "StartSermon",
+                    "slots": [],
+                    "samples": [
+                        "Listen to sermon",
+                        "Start streaming",
+                        "Start playing",
+                        "Start",
+                        "Stream",
+                        "Start the sermon",
+                        "Stream the sermon",
+                        "Play the sermon"
+                    ]
+                },
+                {
+                    "name": "StreamSermon",
+                    "slots": [
+                        {
+                            "name": "sermon_type",
+                            "type": "sermon_type",
+                            "samples": [
+                                "Play {sermon_type}",
+                                "Play an {sermon_type} one",
+                                "A {sermon_type} one",
+                                "A {sermon_type} sermon",
+                                "{sermon_type} sermon"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "Listen to {sermon_type}",
+                        "Start streaming {sermon_type}",
+                        "Stream the {sermon_type}",
+                        "Play a {sermon_type}",
+                        "Play the {sermon_type}",
+                        "Start playing {sermon_type}",
+                        "Start playing {sermon_type} sermon",
+                        "Play {sermon_type}",
+                        "Listen {sermon_type}",
+                        "Listen to {sermon_type} sermon",
+                        "Play the {sermon_type} sermon",
+                        "Play a {sermon_type} sermon"
+                    ]
+                },
+                {
+                    "name": "AMAZON.PauseIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ResumeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "StopSermon",
+                    "slots": [],
+                    "samples": [
+                        "Cancel playing",
+                        "Cancel the sermon",
+                        "Stop playing",
+                        "Stop playing the sermon",
+                        "Stop the sermon"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "sermon_type",
+                    "values": [
+                        {
+                            "id": "test",
+                            "name": {
+                                "value": "test",
+                                "synonyms": [
+                                    "sample sermon",
+                                    "example sermon",
+                                    "test sermon",
+                                    "debugging",
+                                    "debug",
+                                    "example",
+                                    "sample",
+                                    "testing",
+                                    "trial",
+                                    "test"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "recorded",
+                            "name": {
+                                "value": "recorded",
+                                "synonyms": [
+                                    "recorded sermon",
+                                    "pre-recorded sermon",
+                                    "earlier sermon",
+                                    "previous sermon",
+                                    "pre-recorded",
+                                    "previous",
+                                    "earlier"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "live",
+                            "name": {
+                                "value": "live",
+                                "synonyms": [
+                                    "live sermon",
+                                    "today's sermon",
+                                    "today's",
+                                    "this morning",
+                                    "today",
+                                    "now",
+                                    "the sermon"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "StreamSermon",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "sermon_type",
+                            "type": "sermon_type",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.741002345812.1403297735628"
+                            },
+                            "validations": [
+                                {
+                                    "type": "hasEntityResolutionMatch",
+                                    "prompt": "Slot.Validation.1326442368452.1289482197473.1255290236195"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.741002345812.1403297735628",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Would you prefer to list to a live or pre-recorded sermon?"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.1326442368452.1289482197473.1255290236195",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "I'm sorry, I didn't understand.  Do you want to listen to the live sermon or a pre-recorded one?"
+                    }
+                ]
+            }
+        ]
+    }
+}
